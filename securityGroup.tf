@@ -1,12 +1,11 @@
 resource "aws_security_group" "group_open_world" {
   name        = "allow ssh-http-https"
   description = "Allow ssh-http-https inbound traffic and all outbound trafic"
-  vpc_id      = "${aws_vpc.UNIRVPC.id}"
+  vpc_id      = "${aws_vpc.UNIRJENKINS.id}"
   tags = {
-    Name = "allow_all_world"
+    Name = "allow ssh-http-https"
   }
 }
-
 
 resource "aws_security_group_rule" "rule_outbound" {
   type              = "egress"
