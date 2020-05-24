@@ -8,6 +8,11 @@ resource "aws_instance" "jenkins" {
     network_interface_id = "${aws_network_interface.jenkins_interface.id}"
     device_index = 0
   }
+  tags = {
+    Name = "JENKINS"
+    Environment = "PRO"
+  }
+
   credit_specification {
     cpu_credits = "unlimited"
   }
@@ -18,8 +23,4 @@ resource "aws_network_interface" "jenkins_interface" {
     tags = {
         Name = "unir_jenkins_interface"
     }
-}
-resource "aws_key_pair" "jenkinsSSH" {
-  key_name   = "jenkinsTf"
-  public_key = "${var.JENKINS_SSH_KEY}"
 }

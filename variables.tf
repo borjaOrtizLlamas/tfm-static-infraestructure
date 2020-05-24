@@ -10,7 +10,11 @@ variable "ZONE_SUB" {
 }
 variable "JENKINS_SSH_KEY" {
 }
+variable "MONGO_SSH_KEY" {
+}
+variable "KIBANA_SSH_KEY" {
 
+}
 #our provider
 provider "aws" {
   region     = "${var.ZONE}"
