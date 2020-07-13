@@ -1,5 +1,5 @@
 resource "aws_instance" "jenkins" {
-  ami = "ami-02126f54ea33cc490" #This ami is generated with packer, the code is in this repository: https://github.com/borjaOrtizLlamas/jenkinsAMI.git
+  ami = "ami-093620e0e4f2f5f0f" #This ami is generated with packer, the code is in this repository: https://github.com/borjaOrtizLlamas/jenkinsAMI.git
   instance_type = "t2.xlarge"
   depends_on = ["aws_internet_gateway.openWorld"]
   availability_zone = "${var.ZONE_SUB}"
